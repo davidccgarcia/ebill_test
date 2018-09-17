@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,17 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::group(['prefix' => 'v1/'], function () {
+    Route::group(['middleware' => 'auth:api'], function () {
+        Route::get('/ebill/{word}', function ($word) {
+            return [
+                'original' => $word, 
+                'upper' => strtoupper($word)
+            ];            
+        });
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+        Route::get('/profile', function () {
+            return Auth::guard('api')->user();
+        });
+    });
 });
