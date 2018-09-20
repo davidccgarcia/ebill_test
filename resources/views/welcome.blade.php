@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel - deploy and rollback en <a href="https://styde.net">Styde</a>
+                    Laravel - deploy
                 </div>
 
                 <div class="links">
