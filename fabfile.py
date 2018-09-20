@@ -13,7 +13,7 @@ git_branch = 'master'
 git_repo = 'git@github.com:davidccgarcia/ebill.git'
 repo_dir = '~/html/repo'
 persist_dir = '~/html/persist'
-next_release = "%(time).0f" % {'time:' time()}
+next_release = "%(time).0f" % {'time': time()}
 current_release = '~/html/current'
 
 @task
